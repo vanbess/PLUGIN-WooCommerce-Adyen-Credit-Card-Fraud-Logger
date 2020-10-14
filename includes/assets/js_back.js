@@ -39,7 +39,6 @@ jQuery(document).ready(function ($) {
             'blocking': $('select#sbadaf-block-user').val(),
             'block_length': $('select#sbadaf-block-user-period').val(),
             'email_addresses': $('input#sbadaf-mail-admin').val()
-            
         };
 
         $.post(ajaxurl, data, function (response) {
