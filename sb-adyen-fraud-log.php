@@ -19,15 +19,14 @@ define('SBADAF_URL', plugin_dir_url(__FILE__));
 define('SBADAF_AJURL', admin_url('admin-ajax.php'));
 
 // load plugin files
-function sbadaf_init(){
-
+function sbadaf_init()
+{
     // cpt
-    require_once SBADAF_PATH.'includes/cpt.php';
+    require_once SBADAF_PATH . 'includes/cpt.php';
 
     // classes
-    require_once SBADAF_PATH.'includes/classes/sbadaf_admin.php';
-    require_once SBADAF_PATH.'includes/classes/sbadaf_front.php';
-
+    require_once SBADAF_PATH . 'includes/classes/sbadaf_admin.php';
+    require_once SBADAF_PATH . 'includes/classes/sbadaf_front.php';
 }
 
 add_action('plugins_loaded', 'sbadaf_init');
