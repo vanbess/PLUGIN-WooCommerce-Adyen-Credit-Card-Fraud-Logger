@@ -84,7 +84,7 @@ trait sbadaf_fraud_log_metaboxes
             <div class="sbadaf_meta_input_notes">
                 <hr style="margin-top: 30px;">
                 <label for="sbadaf_fraud_notes"><?php pll_e('Fraud log notes:'); ?></label>
-                <span class="sbadaf-help">If you would like to add notes about this log you can do so below.</span>
+                <span class="sbadaf-help"><?php pll_e('If you would like to add notes about this log you can do so below.'); ?></span>
                 <textarea name="sbadaf_fraud_notes" id="sbadaf_fraud_notes" cols="30" rows="10">
                 <?php echo get_post_meta(get_the_ID(), 'sbadaf_fraud_notes', true); ?>
                 </textarea>
