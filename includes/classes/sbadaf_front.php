@@ -42,15 +42,22 @@ class sbadaf_front
         // file_put_contents(SBADAF_PATH . 'sbadaf-adyen-comms-test.txt', print_r($data_arr, true));
 
         // get relevant user data for use in fraud log
-        $user_ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
-        $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $order_no = $data_arr['notificationItems'][0]['NotificationRequestItem']['merchantReference'];
         $pmt_method = $data_arr['notificationItems'][0]['NotificationRequestItem']['paymentMethod'];
-        $psp_ref = $data_arr['notificationItems'][0]['NotificationRequestItem']['paymentMethod'];
+        $psp_ref = $data_arr['notificationItems'][0]['NotificationRequestItem']['pspReference'];
         $reason = $data_arr['notificationItems'][0]['NotificationRequestItem']['reason'];
 
         // get order id from order number
         $order_id = wc_seq_order_number_pro()->find_order_by_order_number($order_no);
+
+        // get order data
+        $order_data = new WC_Order($order_id);
+
+        // get user ip and user agent
+        if ($order_data && is_array($order_data) || is_object($order_data)) :
+            $user_ip = $order_data->get_customer_ip_address();
+            $user_agent = $order_data->get_customer_user_agent();
+        endif;
 
         /**
          * Meta keys we will be inserting/checking:

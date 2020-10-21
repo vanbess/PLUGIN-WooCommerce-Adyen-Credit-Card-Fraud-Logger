@@ -121,3 +121,36 @@ a#sbadaf_del_logs_cancel {
     text-transform: uppercase;
     text-align: center;
 }
+
+div#sbadaf_log_metadata_cont label {
+    display: block;
+    font-weight: 700;
+    padding: 10px 3px 6px;
+}
+
+div#sbadaf_log_metadata_cont input {
+    width: 96%;
+}
+
+.sbadaf_meta_input_notes {
+    clear: both;
+}
+
+.sbadaf_meta_input_notes span {
+    margin-bottom: 8px;
+}
+
+textarea#sbadaf_fraud_notes {
+    width: 100%;
+}
+
+div#sbadaf_data_row {
+    overflow: auto;
+}
+
+.sbadaf_meta_input_sbs {
+    width: 32%;
+    float: left;
+    overflow: auto;
+    margin-right: 1.3%;
+}

@@ -24,6 +24,10 @@ function sbadaf_init()
     // cpt
     require_once SBADAF_PATH . 'includes/cpt.php';
 
+    // traits
+    require_once SBADAF_PATH . 'includes/classes/trait-admin-columns.php';
+    require_once SBADAF_PATH . 'includes/classes/trait-fraud-log-metaboxes.php';
+
     // classes
     require_once SBADAF_PATH . 'includes/classes/sbadaf_admin.php';
     require_once SBADAF_PATH . 'includes/classes/sbadaf_front.php';
